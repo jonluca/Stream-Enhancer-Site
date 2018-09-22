@@ -28,6 +28,10 @@ function registerActions() {
     $("#wrapper").toggleClass("dark-mode");
   });
 
+  $("#jumpToNow").click(_ => {
+    hls.startLoad(startPosition = -1);
+  });
+
 }
 
 function handleErrors() {

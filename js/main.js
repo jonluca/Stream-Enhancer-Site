@@ -60,7 +60,6 @@ function loadHarFromURL() {
 
 function createConfig(cookies, headers) {
   return {
-    liveDurationInfinity: true,
     xhrSetup: function (xhr, url) {
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 1) {
