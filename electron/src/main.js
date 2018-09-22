@@ -1,11 +1,17 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, Menu} = require('electron');
-app.commandLine.appendArgument("--disable-web-security");
+const {app, BrowserWindow, Menu, protocol} = require('electron');
+const {ipcMain} = require('electron');
 require('electron-debug')();
+app.commandLine.appendSwitch('--autoplay-policy', 'no-user-gesture-required');
+
+// handles links `streamenhancer://<something>`
+const PROTOCOL_PREFIX = 'streamenhancer';
 
 app.on('ready', init);
-
+app.setAsDefaultProtocolClient(PROTOCOL_PREFIX);
 let windows = {};
+let passedToken;
+let mainWindow;
 
 function init() {
   Menu.setApplicationMenu(null);
@@ -19,15 +25,30 @@ function init() {
       webSecurity: false
     }
   });
-  window.loadFile('./src/index.html');
-  window.webContents.on('did-finish-load', () => {
+  mainWindow = window;
+  protocol.registerHttpProtocol(PROTOCOL_PREFIX, (req, cb) => {
+    console.log(req.url);
+    window.webContents.send('token-load', req.url);
   });
+  window.loadFile('./src/index.html');
 
   window.on('closed', () => {
     app.quit();
   });
-
+  window.openDevTools();
 }
+
+// Protocol handler for osx
+app.on('open-url', function (event, url) {
+  event.preventDefault();
+  passedToken = url;
+  if (passedToken) {
+    let splitToken = passedToken.split("://");
+    if (splitToken && splitToken.length === 2) {
+      mainWindow.webContents.send('token-load', splitToken[1]);
+    }
+  }
+});
 
 function createWindow(params) {
   const win = new BrowserWindow(params);

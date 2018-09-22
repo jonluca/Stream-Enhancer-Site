@@ -1,4 +1,5 @@
-// Shorthand for $( document ).ready()
+const {ipcRenderer} = require('electron');
+
 let hls = undefined;
 $(function () {
   loadHarFromBox();
@@ -109,3 +110,7 @@ function loadVideo(url, cookies, headers) {
   }
 }
 
+ipcRenderer.on('token-load', (event, token) => {
+  $("#token").val(token);
+  loadHarFromBox();
+});

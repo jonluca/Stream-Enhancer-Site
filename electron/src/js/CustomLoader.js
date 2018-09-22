@@ -138,7 +138,7 @@ class CustomLoader {
           if (stats.retry >= config.maxRetry || (status >= 400 && status < 499)) {
             console.error(`${status} while loading ${context.url}`);
             if (xhr.responseType === 'arraybuffer') {
-              console.error(arrayBufferToString8(xhr.response));
+              console.error(this.arrayBufferToString8(xhr.response));
             }
             this.callbacks.onError({
               code: status,

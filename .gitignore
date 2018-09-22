@@ -1,3 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
 electron/node_modules/*
+Auth-Getter/node_modules/*
+electron/dist/*
