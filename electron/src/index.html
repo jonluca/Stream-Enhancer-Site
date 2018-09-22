@@ -15,13 +15,11 @@
         <link rel="stylesheet" href="assets/css/noscript.css"/>
     </noscript>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="js/CustomLoader.js"></script>
     <script src="js/main.js"></script>
 </head>
-<body class="is-preload">
+<body>
 <!-- Wrapper -->
 <div id="wrapper">
     <!-- Main -->
@@ -33,12 +31,20 @@
             <icon id="moreIcon" class="fa fa-arrow-circle-down"></icon>
         </div>
     </section>
-    <section id="moreContents"></section>
+    <section id="moreContents">
+        <div class="text-input">
+            <input type="text" id="token" placeholder="Paste the export token here!">
+            <label for="token">Export Token</label>
+        </div>
+    </section>
     <footer id="footer">
         <ul class="copyright">
             <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
     </footer>
 </div>
+<script>
+  require('./dashboard');
+</script>
 </body>
 </html>
