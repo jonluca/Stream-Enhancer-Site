@@ -7,12 +7,7 @@
     "electron": "^3.0.0",
     "electron-debug": "^2.0.0",
     "jquery": "^3.3.1",
-    "node-fetch": "^2.2.0",
-    "node-xhrstub": "^1.1.1",
-    "xhr2": "^0.1.4",
-    "xhr2-unsafe": "^0.1.4",
-    "xmlhttprequest": "^1.8.0",
-    "xmlhttprequest-unsafe": "^1.8.0"
+    "xhr2-unsafe": "^0.1.5"
   },
   "devDependencies": {},
   "scripts": {

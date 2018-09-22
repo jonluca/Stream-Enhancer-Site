@@ -24,6 +24,10 @@ function registerActions() {
   });
   $('#inputDatabaseName').keyup(loadHarFromBox);
 
+  $("#darkMode").on('click', e => {
+    $("#wrapper").toggleClass("dark-mode");
+  });
+
 }
 
 function handleErrors() {
@@ -64,7 +68,8 @@ function loadHarFromBox() {
 
 function createConfig(cookies, headers) {
   return {
-    liveDurationInfinity: true,
+    autoStartLoad: true,
+    maxBufferLength: 60 * 60 * 12, // max buffer time in seconds, keep it at 12 hours
     xhrSetup: function (xhr, url) {
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 1) {
@@ -93,6 +98,7 @@ function loadVideo(url, cookies, headers) {
       hls.loadSource(url);
       hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
         console.log("manifest loaded, found " + data.levels.length + " quality level");
+        video.play();
       });
     });
 

@@ -3,9 +3,6 @@ const {app, BrowserWindow, Menu} = require('electron');
 app.commandLine.appendArgument("--disable-web-security");
 require('electron-debug')();
 
-const fetch = require('node-fetch');
-const {ipcMain} = require('electron');
-
 app.on('ready', init);
 
 let windows = {};
@@ -15,8 +12,8 @@ function init() {
 
   let window = createWindow({
     title: 'StreamEnhancer',
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 900,
     resizable: true,
     webPreferences: {
       webSecurity: false
@@ -30,29 +27,6 @@ function init() {
     app.quit();
   });
 
-  // ipcMain.on('crypto-popout', (event, arg) => {
-  //   let targetCoin;
-  //   for (const coinId in cryptoData.data) {
-  //     if (cryptoData.data[coinId].website_slug === arg) {
-  //       targetCoin = cryptoData.data[coinId];
-  //       break;
-  //     }
-  //   }
-  //   let popout = createWindow({
-  //     title: `${targetCoin.name} Popout`,
-  //     width: 500,
-  //     height: 100,
-  //     frame: false,
-  //     transparent: true,
-  //     resizable: false,
-  //     alwaysOnTop: true
-  //   });
-  //   popout.loadFile('./src/popout.html');
-  //   popout.webContents.on('did-finish-load', () => {
-  //     popout.send('crypto-info', arg);
-  //     popout.send('crypto-data', cryptoData);
-  //   });
-  // });
 }
 
 function createWindow(params) {

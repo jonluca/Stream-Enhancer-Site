@@ -24,7 +24,7 @@
   outline: none;
   border: 1px solid lightgray;
   border-radius: 3px;
-  padding: 10px 10px 10px 100px;
+  padding: 10px 10px 10px 160px;
   transition: all 0.1s ease-out;
 }
 
@@ -38,7 +38,7 @@
   color: white;
   border-radius: 3px 0 0 3px;
   padding: 0 20px;
-  background: #E03616;
+  background: #8b220e;
   -webkit-transform: translateZ(0) translateX(0);
   transform: translateZ(0) translateX(0);
   transition: all 0.3s ease-in;
@@ -56,4 +56,19 @@
   padding: 10px;
   transition: all 0.3s ease-out;
   transition-delay: 0.2s;
+}
+
+.dark-mode {
+  background: #000 !important;
+  background-color: black !important;
+  color: white !important;
+}
+
+.dark-mode * {
+  color: white !important;
+  background: black !important;
+}
+
+.checkboxes {
+  margin-top: 15px;
 }
