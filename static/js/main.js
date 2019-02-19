@@ -22,6 +22,10 @@ function registerMoreButton() {
 }
 
 function handleErrors() {
+  if(!hls){
+    setTimeout(_ => { handleErrors(); }, 300);
+    return;
+  }
   hls.on(Hls.Events.ERROR, function (event, data) {
     var errorType = data.type;
     var errorDetails = data.details;
