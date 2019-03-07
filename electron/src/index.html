@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Stream Enhancer</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/stream.css"/>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="js/CustomLoader.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Main -->
+    <section id="main">
+        <video controls id="video"></video>
+    </section>
+    <section id="more">
+        <div>More
+            <icon id="moreIcon" class="fa fa-arrow-circle-down"></icon>
+        </div>
+    </section>
+    <section id="moreContents">
+        <div class="text-input">
+            <input type="text" id="token" placeholder="Paste the export token here!">
+            <label for="token">Export Token</label>
+        </div>
+        <div class="checkboxes">
+            <input type="checkbox" id="darkMode"/>
+            <label for="darkMode" class="check-box">Enable Dark Mode</label>
+        </div>
+        <div class="buttons">
+            <button id="jumpToNow">Jump To Live</button>
+        </div>
+    </section>
+    <footer id="footer">
+        <ul class="copyright">
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </footer>
+</div>
+<script>
+  require('./dashboard');
+</script>
+</body>
+</html>

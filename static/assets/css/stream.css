@@ -1,0 +1,11 @@
+#video {
+  width: 100%;
+}
+
+#more {
+  cursor: pointer;
+}
+
+#moreContents {
+  display: none;
+}
