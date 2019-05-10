@@ -5,7 +5,7 @@
   "author": "JonLuca DeCaro",
   "main": "src/main.js",
   "dependencies": {
-    "electron-debug": "^2.0.0",
+    "electron-debug": "^3.0.0",
     "jquery": "^3.3.1",
     "request": "^2.88.0",
     "xhr2-unsafe": "^0.1.5"
