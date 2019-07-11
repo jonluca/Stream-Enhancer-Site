@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@types/node@^8.0.24":
-  version "8.10.30"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.30.tgz#2c82cbed5f79d72280c131d2acffa88fbd8dd353"
+"@types/node@^10.1.4":
+  version "10.14.12"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.14.12.tgz#0eec3155a46e6c4db1f27c3e588a205f767d622f"
 
 ajv@^5.3.0:
   version "5.5.2"
@@ -188,11 +188,11 @@ electron-localshortcut@^3.0.0:
     keyboardevent-from-electron-accelerator "^1.1.0"
     keyboardevents-areequal "^0.2.1"
 
-electron@3.1.8:
-  version "3.1.8"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-3.1.8.tgz#01b0b147dfcca47967ff07dbf72bf5e96125a2ac"
+electron@3.1.12:
+  version "3.1.12"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-3.1.12.tgz#3d53909423d538d16bb05df20925d86ffd9e436b"
   dependencies:
-    "@types/node" "^8.0.24"
+    "@types/node" "^10.1.4"
     electron-download "^4.1.0"
     extract-zip "^1.0.3"
 
