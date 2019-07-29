@@ -11,7 +11,7 @@
     "xhr2-unsafe": "^0.1.5"
   },
   "devDependencies": {
-    "electron": "5.0.8"
+    "electron": "6.0.0"
   },
   "scripts": {
     "start": "electron .",
