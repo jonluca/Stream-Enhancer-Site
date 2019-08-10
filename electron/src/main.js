@@ -22,7 +22,8 @@ function init() {
     height: 900,
     resizable: true,
     webPreferences: {
-      webSecurity: false
+      webSecurity: false,
+      nodeIntegration: true
     }
   });
   mainWindow = window;
